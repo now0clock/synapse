@@ -399,6 +399,7 @@ class SsoRedirectServlet(RestServlet):
             )
             request.redirect(new_uri)
             finish_request(request)
+            return
 
         client_redirect_url = parse_string(
             request, "redirectUrl", required=True, encoding=None
